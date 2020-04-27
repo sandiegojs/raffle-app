@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    if (window.document.location == `localhost:3000/results`) {
+    if (window.document.location == `http://localhost:3000/results`) {
         const settings = {
             method: 'GET'
         };
-
+        console.log("hit");
         fetch('/api', settings) 
-        .then(function (response) {return response.json()})
-        // .then(data => console.log(data));
+            .then(response => response.json())
+            .then(data => console.log(data));
     }
-  });
-  
+});
+
 
 function handleSubmit () {
     let first = document.getElementById('firstName').value;
